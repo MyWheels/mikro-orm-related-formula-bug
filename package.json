@@ -1,0 +1,20 @@
+{
+  "name": "mikro-orm-related-formula-bug",
+  "version": "1.0.0",
+  "license": "MIT",
+  "prettier": {},
+  "scripts": {
+    "database": "docker run --rm --name bug -e POSTGRES_PASSWORD=password -v \"$PWD/init.sql\":\"/docker-entrypoint-initdb.d/init.sql\" -p 15432:5432 postgres:13-alpine",
+    "start": "ts-node src/bug.ts"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "5.1.2",
+    "@mikro-orm/postgresql": "5.1.2",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
